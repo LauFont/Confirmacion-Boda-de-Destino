@@ -1,51 +1,137 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Boda de John y Julia</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/d7a194a66b.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.x.x/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.x.x/css/all.min.css">
+
+  <title>SavetheDay-Boda</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <header>
-    <h1>¡Bienvenidos a nuestro sitio web de bodas!</h1>
-    <p>Confirmá asistencia y elegí tu plan de viaje.</p>
-  </header>
 
-  <section id="confirmar">
-    <h2>Confirmación de Asistencia</h2>
-    <form id="rsvp-form">
-      <label>Nombre y Apellido: <input type="text" name="nombre" required></label><br><br>
-      <label>Nombre y Apellido del Acompañante: <input type="text" name="acompanante"></label><br><br>
-      <label>¿Asistirás?
-        <select name="confirmacion" required>
-          <option value="">--</option>
-          <option value="Sí">Sí</option>
-          <option value="No">No</option>
-        </select>
-      </label><br><br>
-      <label>Plan elegido:
-        <select name="plan" required>
-          <option value="">--</option>
-          <option value="Fin de semana">Fin de semana</option>
-          <option value="Estancia extendida">Estancia extendida</option>
-        </select>
-      </label><br><br>
-      <label>Comentarios:<br>
-        <textarea name="comentarios" rows="4" cols="50"></textarea>
-      </label><br><br>
-      <button type="submit">Enviar</button>
-    </form>
-    <p id="msg"></p>
-  </section>
-
-  <section id="itinerario">
-    <h2>Elige tu plan de viaje</h2>
-    <button onclick="mostrarItinerario('corto')">Fin de Semana</button>
-    <button onclick="mostrarItinerario('extendido')">Estancia Extendida</button>
-    <div id="timeline"></div>
-  </section>
-
-<script src="script.js"></script>
-</body>
 </html>
+
+<body>
+  <section class="banner">
+    <button class="music-btn" aria-label="Reproducir música">
+      <i class="fa-solid fa-music"></i>
+    </button>
+    <audio id="bg-music" src="musica/happiness-upbeat-150907.mp3"></audio>
+
+    <div class="banner-overlay"></div>
+
+    <div class="banner-content">
+      <div class="typewrite-wrapper">
+        <h1>
+          <span class="typewrite" data-loop="yes" data-speed="100" data-delay="2000"
+            data-words='["Save the Date", "Nuestra Boda"]'></span>
+        </h1>
+      </div>
+      <h3 id="fecha-evento">
+        22 • 03 • 2026
+      </h3>
+    </div>
+
+    </div>
+
+
+    <div class="rsvp-location-flex">
+      <!-- Caja Confirmación -->
+      <div class="rsvp" id="confirmar">
+        <img src="icons/calendar.svg" alt="Confirmar asistencia" class="fiesta-icon1">
+        <h2 class="section-title">Confirmar asistencia</h2>
+        <p>Antes del 20/10/2025 <br> ¡Espero que puedan acompañarnos!</p>
+        <div class="location-buttons">
+          <button class="rsvp-btn" onclick="abrirModal('modalConfirmar')">RSVP</button>
+          <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Fiesta+de+Umma&dates=20251004T210000Z/20251005T050000Z&details=Fiesta+de+15+Años+de+Umma&location=Ruta+Nacional+205+Km114,5,+B7240+Lobos,+Provincia+de+Buenos+Aires"
+            class="rsvp-btn" target="_blank">Agendar</a>
+        </div>
+        <div class="rsvp-info">
+          <hr class="rsvp-line">
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="plan-selector">
+      <button class="rsvp-btn" onclick="mostrarItinerario('finde')">Fin de Semana</button>
+      <button class="rsvp-btn" onclick="mostrarItinerario('extendido')">Estancia Extendida</button>
+    </div>
+
+    <div id="itinerario" class="timeline-horizontal">
+      <div class="timeline-item oculto" data-plan="ambos">
+        <div class="timeline-icon">🍽️</div>
+        <p class="timeline-label">Día 1<br>Llegada y cena</p>
+      </div>
+      <div class="timeline-item oculto" data-plan="extendido">
+        <div class="timeline-icon">🏙️</div>
+        <p class="timeline-label">Día 2<br>City Tour</p>
+      </div>
+      <div class="timeline-item oculto" data-plan="extendido">
+        <div class="timeline-icon">🔥</div>
+        <p class="timeline-label">Día 3<br>Campo y asado</p>
+      </div>
+      <div class="timeline-item oculto" data-plan="ambos">
+        <div class="timeline-icon">💍</div>
+        <p class="timeline-label">Día 4<br>Boda y regreso</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal Confirmar Asistencia -->
+  <div id="modalConfirmar" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar" onclick="cerrarModal('modalConfirmar')">&times;</span>
+      <img src="icons/calendar.svg" alt="icono calendario" class="icono-modal-cancion">
+      <h2 class="section-title">Confirmar asistencia</h2>
+
+      <form
+        action="https://script.google.com/macros/s/AKfycbzUGml6ndxluPa13nwtvSGo29aCqzfS2myieiDAlK6FehaEXyqVBC6nvJVf3-7y3SfVng/exec"
+        method="POST" target="hidden_iframe" onsubmit="enviarFormulario(); cerrarModal('modalConfirmar');">
+
+        <input type="text" name="NOMBRE Y APELLIDO" placeholder="Nombre y Apellido" class="input-cancion" required>
+        <input type="tel" name="NOMBRE Y APELLIDO ACOMPAÑANTE" placeholder="Nombre y apellido acompañante"
+          class="input-cancion" required>
+
+        <div class="modal-rsvp-group">
+          <p>¿Asistirás?</p>
+          <label><input type="radio" name="CONFIRMACIÓN" value="Sí, ahí estaré 🥳" required> Sí, ahí estaré 🥳</label>
+          <label><input type="radio" name="CONFIRMACIÓN" value="No podré asistir 😭"> No podré asistir 😭</label>
+        </div>
+
+        <div class="modal-rsvp-group">
+          <p>Confirmá asistencia y elegí tu plan de viaje.</p>
+          <label>
+            <input type="radio" name="PLAN ELEGIDO" value="Estancia extendida" required>
+            Estancia extendida.
+          </label>
+          <label>
+            <input type="radio" name="PLAN ELEGIDO" value="Fin de Semana">
+            Fin de Semana
+          </label>
+        </div>
+
+        <button type="submit" class="modal-btn-gris">ENVIAR</button>
+      </form>
+    </div>
+  </div>
+
+  <iframe name="hidden_iframe" style="display:none;"></iframe>
+
+
+
+
+  <footer class="footer">
+    sitio diseñado por <a href="mailto:laurafont.studio@gmail.com" target="_blank"
+      rel="noopener">laurafont.studio@gmail.com</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>

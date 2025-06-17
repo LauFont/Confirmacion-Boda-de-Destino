@@ -1,0 +1,694 @@
+/* ========== VARIABLES GLOBALES ========== */
+:root {
+  --first-color: #F7E7CE;
+  --first-alpha-color: rgba(247, 206, 224, 0.85);
+  --second-color: #990f48;
+  --second-alpha-color: rgba(153, 15, 86, 0.359);
+  --third-color: #7c0c66;
+  --third-alpha-color: rgba(193, 39, 45, 0.7);
+  --accent-gold: #fefefe;
+  --accent-gold-alpha: rgba(130, 19, 113, 0.556);
+  --white-color: #FFFFFF;
+  --gray-light-color: #dcdbdb;
+  --gray-color: #edede6;
+  --gray-dark-color: #2B2B2B;
+  --black-color: #570945;
+  --link-color: #C1272D;
+  --title-color: #990f62;
+  --text-color: #2B2B2B;
+  --alternative-color: #b48a78;
+  --white-alpha-color: rgba(251, 247, 247, 0.812);
+  --black-alpha-color: rgba(43, 43, 43, 0.90);
+  --font-title: 'Dancing Script', cursive;
+  --font-text: 'Comfortaa', cursive, sans-serif;
+  --max-width: 1200px;
+  --header-height: 4rem;
+}
+
+/* ========== FUENTES PERSONALIZADAS ========== */
+@font-face {
+  font-family: 'Dantina';
+  src: url('fonts/Dantina.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Comfortaa';
+  src: url('fonts/Comfortaa-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Comfortaa';
+  src: url('fonts/Comfortaa-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Comfortaa';
+  src: url('fonts/Comfortaa-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* ========== RESET ========== */
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--gray-light-color);
+  font-family: var(--font-text);
+}
+
+a {
+  color: var(--link-color);
+  transition: all 0.5s ease-out;
+}
+
+h1,
+h2,
+h4,
+h5,
+h6 {
+  font-family: 'Dantina', cursive;
+  color: var(--second-color);
+  ;
+  letter-spacing: 1px;
+}
+
+.h2,
+h3 {
+  font-family: var(--font-text);
+  font-size: 2rem;
+  margin: 0 100px;
+}
+
+p,
+li,
+a,
+input,
+textarea,
+button {
+  font-family: var(--font-text);
+  color: var(--text-color);
+}
+
+/* ========== BOTÓN MÚSICA ========== */
+.music-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  z-index: 20;
+  background: var(--white-alpha-color);
+  border: none;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7rem;
+  color: var(--second-color);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: background 0.2s, color 0.2s;
+}
+
+.music-btn:hover {
+  background: var(--third-color);
+  color: var(--white-color);
+}
+
+/* ========== BANNER PRINCIPAL ========== */
+.banner {
+  background-image: url('img/pareja-de-recien-casados-con-su-coche-byn.png'); /* reemplazá con tu imagen */
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  min-height: 100vh; /* o ajustá a lo que necesites */
+  position: relative;
+  z-index: 0;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* o el color/transparencia que uses */
+  z-index: 1;
+}
+
+.banner-content,
+.rsvp-location-flex {
+  position: relative;
+  z-index: 2;
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 20px;
+  color: white;
+}
+
+.banner-content>h1 {
+  margin: 0 0 0.5em 0;
+  font-family: var(--font-text);
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.banner-content>h3 {
+  margin: 0 0 0.5em 0;
+  font-family: var(--font-text);
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.banner-content,
+.plan-selector,
+#itinerario {
+  position: relative;
+  z-index: 3;
+}
+
+
+.typewrite {
+  font-family: var(--font-text);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  font-size: 3rem;
+  color: var(--accent-gold);
+  text-align: center;
+  margin: 4rem auto;
+  max-width: 800px;
+}
+
+.itinerario-horizontal {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 20px;
+  gap: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  margin-top: 20px;
+  z-index: 3;
+}
+
+.dia {
+  min-width: 200px;
+  padding: 15px;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.9);
+  font-family: 'Comfortaa', sans-serif;
+  font-size: 1rem;
+  color: #333;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.dia:hover {
+  transform: translateY(-5px);
+}
+
+.dia.hidden {
+  display: none;
+}
+
+.plan-selector {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  flex-wrap: nowrap;
+  z-index: 3;
+}
+
+.plan-selector .rsvp-btn {
+  padding: 10px 10px;
+  min-width: 160px;
+  max-width: 220px;
+  font-size: 0.8rem;
+  border-radius: 30px;
+  background-color: var(--second-color);
+  color: var(--white-color);
+  border: none;
+  font-family: 'Comfortaa', sans-serif;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.plan-selector .rsvp-btn:hover {
+  background-color: var(--title-color);
+  transform: translateY(-2px);
+}
+
+
+/* ========== ANIMACIÓN ÍCONOS ========== */
+@keyframes bounce-zoom-rotate {
+
+  0%,
+  100% {
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+
+  20% {
+    transform: translateY(-8px) scale(1.08) rotate(-6deg);
+  }
+
+  40% {
+    transform: translateY(-16px) scale(1.12) rotate(6deg);
+  }
+
+  60% {
+    transform: translateY(-8px) scale(1.08) rotate(-4deg);
+  }
+
+  80% {
+    transform: translateY(0) scale(1.04) rotate(2deg);
+  }
+}
+
+.fiesta-icon,
+.fiesta-icon1,
+.fiesta-icon2 {
+  margin-bottom: 0.8em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: contain;
+}
+
+
+
+.fiesta-icon1 {
+  width: 20%;
+  height: 20%;
+  animation: bounce-zoom-rotate 1.8s infinite;
+  transition: transform 0.2s;
+}
+
+
+/* ========== CAJA RSVP ========== */
+.rsvp-location-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2em;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  z-index: 2;
+  position: relative;
+}
+
+.rsvp {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 1.5em;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  padding: 2.5em 1.5em 2em;
+  max-width: 500px;
+  width: 100%;
+  min-height: 410px;
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.rsvp .section-title {
+  font-family: 'Dantina', cursive;
+  color: var(--second-color);
+  font-size: 1.2rem;
+  margin: 0 0 1rem;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.8em;
+  width: 100%;
+}
+
+.location-buttons,
+.rsvp .location-buttons {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 1em;
+}
+
+.rsvp-btn {
+  background: var(--second-color);
+  color: var(--white-color);
+  border: none;
+  border-radius: 2em;
+  padding: 0.6em 0.5em;
+  font-size: 1em;
+  font-family: var(--font-text);
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 2px 12px var(--second-alpha-color);
+  transition: background 0.2s, transform 0.2s;
+  letter-spacing: 1px;
+  cursor: pointer;
+  flex: 1 1 45%;
+  min-width: 140px;
+  max-width: 180px;
+  text-align: center;
+  height: 44px;
+  box-sizing: border-box;
+}
+
+.rsvp-btn:hover {
+  background: var(--title-color);
+  color: var(--white-color);
+  transform: scale(1.05);
+  box-shadow: 0 4px 18px var(--second-alpha-color);
+}
+
+.rsvp-line {
+  border: none;
+  border-top: 1px solid var(--white-color);
+  margin: 1.5rem auto 0;
+  width: 80%;
+}
+
+/* ========== MODAL RSVP ========== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  background-color: var(--black-alpha-color);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.modal-contenido {
+  background: var(--white-color);
+  margin: auto;
+  padding: 10px;
+  max-width: 600px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 8px 20px var(--black-alpha-color);
+  position: relative;
+}
+
+.cerrar {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+.input-cancion,
+.input-artista {
+  width: 90%;
+  max-width: 400px;
+  padding: 10px 15px;
+  margin: 8px auto;
+  border: 2px solid var(--title-color);
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.input-cancion::placeholder,
+.input-artista::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+.modal-form-rsvp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.modal-rsvp-group {
+  text-align: left;
+  width: 100%;
+  max-width: 400px;
+}
+
+.modal-rsvp-group label {
+  display: block;
+  margin: 5px 0;
+  font-size: 15px;
+}
+
+.modal-btn-gris {
+  background-color: var(--title-color);
+  color: white;
+  border: none;
+  padding: 12px 10px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: center;
+  text-decoration: none;
+}
+
+.modal-btn-gris:hover {
+  background-color: var(--gray-dark-color);
+}
+
+.icono-modal-cancion {
+  width: 120px;
+  max-width: 40vw;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px auto;
+}
+
+.timeline-horizontal {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Permite el salto de línea */
+  gap: 30px;
+  padding: 30px 20px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  max-width: 800px;
+  margin: 0 auto;
+  z-index: 3;
+}
+
+.timeline-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 100px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+
+.timeline-icon {
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  border: 3px solid #a00000;
+  border-radius: 50%;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a00000;
+  font-weight: bold;
+  margin-bottom: 8px;
+  transition: transform 0.3s ease;
+}
+
+.timeline-icon:hover {
+  transform: scale(1.1);
+}
+
+.timeline-label {
+  font-family: 'Comfortaa', sans-serif;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.timeline-item.oculto {
+  display: none !important;
+}
+
+/* Responsive text sizing */
+@media (max-width: 600px) {
+  .timeline-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .timeline-label {
+    font-size: 0.75rem;
+  }
+}
+/* ========== FOOTER ========== */
+.footer {
+  margin-bottom: var(--header-height);
+  padding: 0.5rem;
+  text-align: center;
+  color: var(--text-color);
+  background-color: var(--white-color);
+}
+
+.footer a {
+  color: var(--gray-dark-color);
+}
+
+.footer a:hover {
+  opacity: 0.1;
+}
+
+@media screen and (min-width: 1024px) {
+  .footer {
+    margin-bottom: 0;
+  }
+}
+
+/* ========== RESPONSIVE ADICIONAL ========== */
+@media (max-width: 900px) {
+  .rsvp-location-flex {
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+  }
+
+  .rsvp {
+    max-width: 95vw;
+    min-width: 0;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .location-buttons,
+  .rsvp .location-buttons {
+    flex-direction: column;
+    gap: 0.7em;
+    align-items: center;
+    width: 100%;
+  }
+
+  .rsvp-btn {
+    min-width: 180px;
+    max-width: 100%;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+
+  html,
+  body,
+  .banner,
+  .galeria,
+  .section,
+  .container1 {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .typewrite {
+    font-size: 2rem;
+    text-align: center;
+    padding: 0 2rem;
+    max-width: 100%;
+    word-break: break-word;
+    display: inline-block;
+  }
+}
+
+
+.typewrite-wrapper {
+  width: 100%;
+  text-align: center;
+}
+
+.banner-content {
+  align-items: center;
+}
+
+/* Responsive text sizing */
+@media (max-width: 600px) {
+  .timeline-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+  .icono-modal-cancion {
+    width: 60px;
+    max-width: 50vw;
+  }
+
+  .timeline-label {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline-horizontal {
+    justify-content: space-evenly;
+  }
+
+  .timeline-item {
+    width: 40%;
+    margin-bottom: 10px;
+  }
+}

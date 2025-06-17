@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="corona" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 179 187">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: url(#Degradado_sin_nombre_2);
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11, .cls-12, .cls-13, .cls-14 {
+        fill: none;
+        stroke-miterlimit: 10;
+        stroke-width: 3px;
+      }
+
+      .cls-2 {
+        stroke: url(#Degradado_sin_nombre_2-6);
+      }
+
+      .cls-3 {
+        stroke: url(#Degradado_sin_nombre_2-7);
+      }
+
+      .cls-4 {
+        stroke: url(#Degradado_sin_nombre_2-11);
+      }
+
+      .cls-5 {
+        stroke: url(#Degradado_sin_nombre_2-14);
+      }
+
+      .cls-6 {
+        stroke: url(#Degradado_sin_nombre_2-8);
+      }
+
+      .cls-7 {
+        stroke: url(#Degradado_sin_nombre_2-4);
+      }
+
+      .cls-8 {
+        stroke: url(#Degradado_sin_nombre_2-2);
+      }
+
+      .cls-9 {
+        stroke: url(#Degradado_sin_nombre_2-9);
+      }
+
+      .cls-10 {
+        stroke: url(#Degradado_sin_nombre_2-13);
+      }
+
+      .cls-11 {
+        stroke: url(#Degradado_sin_nombre_2-3);
+      }
+
+      .cls-12 {
+        stroke: url(#Degradado_sin_nombre_2-10);
+      }
+
+      .cls-13 {
+        stroke: url(#Degradado_sin_nombre_2-5);
+      }
+
+      .cls-14 {
+        stroke: url(#Degradado_sin_nombre_2-12);
+      }
+    </style>
+    <linearGradient id="Degradado_sin_nombre_2" data-name="Degradado sin nombre 2" x1="119.54" y1="117.04" x2="122.54" y2="117.04" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#bf9f56"/>
+      <stop offset=".15" stop-color="#bf9f56"/>
+      <stop offset="1" stop-color="#bf9f56"/>
+    </linearGradient>
+    <linearGradient id="Degradado_sin_nombre_2-2" data-name="Degradado sin nombre 2" x1="110.53" x2="113.53" xlink:href="#Degradado_sin_nombre_2"/>
+    <linearGradient id="Degradado_sin_nombre_2-3" data-name="Degradado sin nombre 2" x1="101.52" x2="104.52" xlink:href="#Degradado_sin_nombre_2"/>
+    <linearGradient id="Degradado_sin_nombre_2-4" data-name="Degradado sin nombre 2" x1="92.51" x2="95.51" xlink:href="#Degradado_sin_nombre_2"/>
+    <linearGradient id="Degradado_sin_nombre_2-5" data-name="Degradado sin nombre 2" x1="83.49" x2="86.49" xlink:href="#Degradado_sin_nombre_2"/>
+    <linearGradient id="Degradado_sin_nombre_2-6" data-name="Degradado sin nombre 2" x1="74.48" x2="77.48" xlink:href="#Degradado_sin_nombre_2"/>
+    <linearGradient id="Degradado_sin_nombre_2-7" data-name="Degradado sin nombre 2" x1="65.47" x2="68.47" xlink:href="#Degradado_sin_nombre_2"/>
+    <linearGradient id="Degradado_sin_nombre_2-8" data-name="Degradado sin nombre 2" x1="56.46" x2="59.46" xlink:href="#Degradado_sin_nombre_2"/>
+    <linearGradient id="Degradado_sin_nombre_2-9" data-name="Degradado sin nombre 2" x1="65.12" y1="105.17" x2="77.83" y2="105.17" gradientTransform="translate(95.3 -19.74) rotate(45)" xlink:href="#Degradado_sin_nombre_2"/>
+    <linearGradient id="Degradado_sin_nombre_2-10" data-name="Degradado sin nombre 2" x1="101.17" y1="105.17" x2="113.88" y2="105.17" gradientTransform="translate(105.86 -45.23) rotate(45)" xlink:href="#Degradado_sin_nombre_2"/>
+    <linearGradient id="Degradado_sin_nombre_2-11" data-name="Degradado sin nombre 2" x1="78.88" y1="94.66" x2="100.12" y2="94.66" gradientTransform="translate(93.15 -35.56) rotate(45)" xlink:href="#Degradado_sin_nombre_2"/>
+    <linearGradient id="Degradado_sin_nombre_2-12" data-name="Degradado sin nombre 2" x1="44.44" y1="126.2" x2="134.56" y2="126.2" xlink:href="#Degradado_sin_nombre_2"/>
+    <linearGradient id="Degradado_sin_nombre_2-13" data-name="Degradado sin nombre 2" x1="44.76" y1="93.23" x2="88.09" y2="93.23" xlink:href="#Degradado_sin_nombre_2"/>
+    <linearGradient id="Degradado_sin_nombre_2-14" data-name="Degradado sin nombre 2" x1="88.14" y1="90.23" x2="134.24" y2="90.23" xlink:href="#Degradado_sin_nombre_2"/>
+  </defs>
+  <g id="wealth_luxury_crown_preciousness_premium_VIP" data-name="wealth, luxury, crown, preciousness, premium, VIP">
+    <g>
+      <g>
+        <line class="cls-1" x1="121.04" y1="117.19" x2="121.04" y2="116.89"/>
+        <line class="cls-8" x1="112.03" y1="117.19" x2="112.03" y2="116.89"/>
+        <line class="cls-11" x1="103.02" y1="117.19" x2="103.02" y2="116.89"/>
+        <line class="cls-7" x1="94.01" y1="117.19" x2="94.01" y2="116.89"/>
+        <line class="cls-13" x1="84.99" y1="117.19" x2="84.99" y2="116.89"/>
+        <line class="cls-2" x1="75.98" y1="117.19" x2="75.98" y2="116.89"/>
+        <line class="cls-3" x1="66.97" y1="117.19" x2="66.97" y2="116.89"/>
+        <line class="cls-6" x1="57.96" y1="117.19" x2="57.96" y2="116.89"/>
+      </g>
+      <rect class="cls-9" x="68.48" y="102.18" width="5.99" height="5.99" transform="translate(-53.43 81.35) rotate(-45)"/>
+      <rect class="cls-12" x="104.53" y="102.18" width="5.99" height="5.99" transform="translate(-42.88 106.84) rotate(-45)"/>
+      <rect class="cls-4" x="83.49" y="88.65" width="12.02" height="12.02" transform="translate(-40.72 91.01) rotate(-45)"/>
+      <path class="cls-14" d="M130.05,129.21H48.95c-1.65,0-3-1.35-3-3s1.35-3,3-3h81.11c1.65,0,3,1.35,3,3s-1.35,3-3,3Z"/>
+      <path class="cls-10" d="M49.9,123.2l-3.64-52.88c-.06-.93,1.21-1.25,1.6-.4h0c7.01,15.42,28.9,15.49,36,.1l2.87-6.23"/>
+      <path class="cls-5" d="M89.5,57.79l5.64,12.23c7.1,15.39,28.99,15.32,36-.1h0c.39-.85,1.66-.53,1.6.4l-3.64,52.88"/>
+    </g>
+  </g>
+</svg>
