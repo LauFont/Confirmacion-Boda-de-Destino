@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boda de John y Julia</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>¡Bienvenidos a nuestro sitio web de bodas!</h1>
+    <p>Confirmá asistencia y elegí tu plan de viaje.</p>
+  </header>
+
+  <section id="confirmar">
+    <h2>Confirmación de Asistencia</h2>
+    <form id="rsvp-form">
+      <label>Nombre y Apellido: <input type="text" name="nombre" required></label><br><br>
+      <label>Nombre y Apellido del Acompañante: <input type="text" name="acompanante"></label><br><br>
+      <label>¿Asistirás?
+        <select name="confirmacion" required>
+          <option value="">--</option>
+          <option value="Sí">Sí</option>
+          <option value="No">No</option>
+        </select>
+      </label><br><br>
+      <label>Plan elegido:
+        <select name="plan" required>
+          <option value="">--</option>
+          <option value="Fin de semana">Fin de semana</option>
+          <option value="Estancia extendida">Estancia extendida</option>
+        </select>
+      </label><br><br>
+      <label>Comentarios:<br>
+        <textarea name="comentarios" rows="4" cols="50"></textarea>
+      </label><br><br>
+      <button type="submit">Enviar</button>
+    </form>
+    <p id="msg"></p>
+  </section>
+
+  <section id="itinerario">
+    <h2>Elige tu plan de viaje</h2>
+    <button onclick="mostrarItinerario('corto')">Fin de Semana</button>
+    <button onclick="mostrarItinerario('extendido')">Estancia Extendida</button>
+    <div id="timeline"></div>
+  </section>
+
+<script src="script.js"></script>
+</body>
+</html>
