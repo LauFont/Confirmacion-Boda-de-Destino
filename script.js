@@ -18,13 +18,13 @@ document.getElementById("rsvp-form").addEventListener("submit", function (e) {
   .then(res => res.text())
   .then(msg => {
     document.getElementById("msg").innerText = msg === "Éxito"
-      ? "¡Gracias por confirmar!"
-      : "Hubo un error.";
+      ? "¡Gracias por confirmar!" : "Error al guardar.";
     e.target.reset();
   })
   .catch(() => {
     document.getElementById("msg").innerText = "Hubo un error. Intenta nuevamente.";
   });
 });
+
 
 
