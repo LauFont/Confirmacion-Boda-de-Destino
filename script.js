@@ -8,21 +8,23 @@ function mostrarItinerario(opcion) {
 }
 
 document.getElementById("rsvp-form").addEventListener("submit", function (e) {
-    e.preventDefault();
-    const form = e.target;
-    const formData = new FormData(form);
+  e.preventDefault();
+  const formData = new FormData(e.target);
 
-    fetch(WEBAPP_URL, {
-        method: "POST",
-        body: formData
-    })
-    .then(res => res.text())
-    .then(msg => {
-        document.getElementById("msg").innerText = msg === "Éxito" ? "¡Gracias por confirmar!" : "Hubo un error.";
-        form.reset();
-    })
-    .catch(() => {
-        document.getElementById("msg").innerText = "Hubo un error. Intenta nuevamente.";
-    });
+  fetch("https://script.google.com/macros/s/AKfycbz_kAOfJ0yGT0Hqum6jB3g-PStxpaqyU7NK4PqFeSQhUX7rTb9hIJu1X3t21T/exec", {
+    method: "POST",
+    body: formData
+  })
+  .then(res => res.text())
+  .then(msg => {
+    document.getElementById("msg").innerText = msg === "Éxito"
+      ? "¡Gracias por confirmar!"
+      : "Hubo un error.";
+    e.target.reset();
+  })
+  .catch(() => {
+    document.getElementById("msg").innerText = "Hubo un error. Intenta nuevamente.";
+  });
 });
+
 
