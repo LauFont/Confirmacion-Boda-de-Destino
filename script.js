@@ -9,19 +9,20 @@ function mostrarItinerario(opcion) {
 
 document.getElementById("rsvp-form").addEventListener("submit", function (e) {
     e.preventDefault();
-    const data = Object.fromEntries(new FormData(e.target).entries());
+    const form = e.target;
+    const formData = new FormData(form);
 
     fetch(WEBAPP_URL, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data)
+        body: formData
     })
-        .then(res => res.text())
-        .then(msg => {
-            document.getElementById("msg").innerText = msg === "Éxito" ? "¡Gracias por confirmar!" : "Hubo un error.";
-            e.target.reset();
-        })
-        .catch(() => {
-            document.getElementById("msg").innerText = "Hubo un error. Intenta nuevamente.";
-        });
+    .then(res => res.text())
+    .then(msg => {
+        document.getElementById("msg").innerText = msg === "Éxito" ? "¡Gracias por confirmar!" : "Hubo un error.";
+        form.reset();
+    })
+    .catch(() => {
+        document.getElementById("msg").innerText = "Hubo un error. Intenta nuevamente.";
+    });
 });
+
